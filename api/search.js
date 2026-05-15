@@ -1,12 +1,22 @@
 export default async function handler(req, res) {
 
-  const invoice = req.query.invoice_number;
+  try {
 
-  const response = await fetch(
-    `https://laravel-evidencia3.infinityfree.me/api/orders/search?invoice_number=${invoice}`
-  );
+    const invoice = req.query.invoice_number;
 
-  const data = await response.json();
+    const response = await fetch(
+      `https://laravel-evidencia3.infinityfree.me/api/orders/search?invoice_number=${invoice}`
+    );
 
-  res.status(200).json(data);
+    const data = await response.json();
+
+    return res.status(200).json(data);
+
+  } catch (error) {
+
+    return res.status(500).json({
+      error: error.message
+    });
+
+  }
 }
