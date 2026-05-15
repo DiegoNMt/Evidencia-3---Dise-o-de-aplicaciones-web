@@ -17,7 +17,9 @@ function App() {
         `/search?invoice_number=${invoice}`
       )
 
-      const data = await response.json()
+      const data = await response.text()
+
+      console.log(data)
 
       if (data.success) {
 
