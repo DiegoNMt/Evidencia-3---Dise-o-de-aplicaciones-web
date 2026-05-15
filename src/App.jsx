@@ -14,7 +14,7 @@ function App() {
     try {
 
       const response = await fetch(
-        `/api/orders/search?invoice_number=${invoice}`
+        `/search?invoice_number=${invoice}`
       )
 
       const data = await response.json()
