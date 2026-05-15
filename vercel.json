@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://laravel-evidencia3.infinityfree.me/api/:path*"
+    }
+  ]
+}
