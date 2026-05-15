@@ -14,7 +14,7 @@ function App() {
     try {
 
       const response = await fetch(
-        `https://laravel-evidencia3.infinityfree.me/api/orders/search?invoice_number=${invoice}`
+        `/api/search?invoice_number=${invoice}`
       )
 
       const data = await response.json()
